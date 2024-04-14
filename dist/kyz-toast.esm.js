@@ -95,6 +95,36 @@ var toastIcon = function toastIcon(_ref) {
   }
 };
 
+function styleInject(css, ref) {
+  if ( ref === void 0 ) ref = {};
+  var insertAt = ref.insertAt;
+
+  if (!css || typeof document === 'undefined') { return; }
+
+  var head = document.head || document.getElementsByTagName('head')[0];
+  var style = document.createElement('style');
+  style.type = 'text/css';
+
+  if (insertAt === 'top') {
+    if (head.firstChild) {
+      head.insertBefore(style, head.firstChild);
+    } else {
+      head.appendChild(style);
+    }
+  } else {
+    head.appendChild(style);
+  }
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var css_248z = ":root {\n    --toast-default: #8b1dd0;\n    --toast-success: #27d0b2;\n    --toast-error: #c52965;\n    --toast-info: #004eff;\n    --toast-warning: #d0761d;\n    --toast-black: #221d26;\n    --toast-white: #ffffff;\n}\n  \n.toast {\n    padding: 15px;\n    min-width: 300px;\n    max-width: 400px;\n    color: var(--toast-white);\n    display: flex;\n    align-items: flex-start;\n    line-height: 1.6;\n    font-size: 14px;\n    border-radius: 15px;\n}\n\n.toast.default {\n    background-color: var(--toast-default);\n}\n\n.toast.success {\n    background-color: var(--toast-success);\n}\n\n.toast.error {\n    background-color: var(--toast-error);\n}\n\n.toast.info {\n    background-color: var(--toast-info);\n}\n\n.toast.warning {\n    background-color: var(--toast-warning);\n}\n\n.toast .content {\n    flex: 1;\n}\n\n.toast .content p {\n    padding: 0;\n    margin: 0;\n}\n\n.toast .close {\n    margin-left: 10px;\n    width: 22px;\n    height: 22px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color: rgba(255, 255, 255, 0);\n    transition: all 100ms ease-in-out;\n    border-radius: 8px;\n    cursor: pointer;\n}\n\n.toast .close:hover {\n    background-color: rgba(255, 255, 255, 0.2);\n}\n\n.toast .icon {\n    margin-right: 10px;\n    width: 22px;\n    height: 22px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color: rgba(255, 255, 255, 0.2);\n    border-radius: 8px;\n}";
+styleInject(css_248z);
+
 var Toast = function Toast(_ref) {
   var id = _ref.id,
     content = _ref.content,
@@ -254,6 +284,9 @@ var toastDispatcher = function toastDispatcher(_ref) {
     });
   });
 };
+
+var css_248z$1 = ".toastContainer {\n  overflow: hidden;\n  overflow-x: auto;\n  display: grid;\n  grid-gap: 20px;\n  position: fixed;\n  user-select: none;\n}\n\n.top-left {\n  top: 20px;\n  left: 20px;\n}\n\n.top-center {\n  top: 20px;\n  left: 50%;\n  transform: translate(-50%, 0);\n}\n\n.top-right {\n  top: 20px;\n  right: 20px;\n}\n\n.bottom-left {\n  bottom: 20px;\n  left: 20px;\n}\n\n.bottom-center {\n  bottom: 20px;\n  left: 50%;\n  transform: translate(-50%, 0);\n}\n\n.bottom-right {\n  bottom: 20px;\n  right: 20px;\n}";
+styleInject(css_248z$1);
 
 var ToastContainer = function ToastContainer(_ref) {
   var _ref$position = _ref.position,
