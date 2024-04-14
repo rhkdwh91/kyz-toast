@@ -1,6 +1,6 @@
 {
   "name": "kyz-toast",
-  "version": "0.0.1",
+  "version": "0.1.3",
   "description": "Animated toast message component for React",
   "keywords": [
     "react",
