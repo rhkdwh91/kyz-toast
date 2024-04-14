@@ -20,7 +20,9 @@
     "src"
   ],
   "sideEffects": true,
-  "main": "index.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "module": "dist/kyz-toast.esm.js",
   "scripts": {
     "dev": "tsdx watch",
     "start": "cd playground && yarn start",
@@ -40,6 +42,11 @@
       "limit": "10 KB"
     }
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
   "author": "",
   "repository": {
     "type": "git",
