@@ -8,9 +8,10 @@ import './ToastContainer.css';
 interface IToastContainer {
   position?: Position
   delay?: number
+  zIndex?: number
 }
 
-const ToastContainer: FC<IToastContainer> = ({ position = 'bottom-left', delay }) => {
+const ToastContainer: FC<IToastContainer> = ({ position = 'bottom-left', delay, zIndex = 999 }) => {
   const { toasts, dispatch } = useToast()
 
   useEffect(() => {
@@ -26,7 +27,7 @@ const ToastContainer: FC<IToastContainer> = ({ position = 'bottom-left', delay }
   }, [])
 
   return (
-    <div className={`toastContainer ${position}`}>
+    <div className={`toastContainer ${position}`} style={{ zIndex }}>
       {toasts.map(toast => (
         <Toast key={toast.id} {...toast} onClose={onClose} />
       ))}

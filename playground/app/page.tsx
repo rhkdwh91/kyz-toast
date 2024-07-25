@@ -1,8 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import styles from "./page.module.css";
-import { ToastContainer, toast } from '../../dist'
+import { ToastContainer, toast } from '../../src'
 
 export default function Home() {
   const wave = () => toast('Morning! Have a good day.', {
@@ -15,7 +13,7 @@ export default function Home() {
       <div>
           <button onClick={wave}>Say hi!</button>
           Hello World!
-          <ToastContainer />
+          <ToastContainer delay={1000} />
       </div>
   )
 }

@@ -3,3 +3,4 @@ rollup.config.js
 tsconfig.json
 tsdx.config.js
 package-lock.json
+dist/*
