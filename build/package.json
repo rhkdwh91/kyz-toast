@@ -16,13 +16,17 @@
     "react-dom": ">=16"
   },
   "files": [
-    "build/dist"
+    "dist"
   ],
+  "main": "dist/kyz-toast.mjs",
+  "module": "dist/kyz-toast.mjs",
   "exports": {
     ".": {
-      "import": "./src/index.tsx"
+      "import": "./dist/dist/kyz-toast.mjs",
+      "types": "./dist/index.d.ts"
     }
   },
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc -b && vite build",
     "lint": "eslint .",

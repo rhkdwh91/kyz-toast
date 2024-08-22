@@ -1,11 +1,11 @@
-import React, { FC } from 'react'
-import { Close } from '../Icons'
-import { Toast as ToastType } from '../../types'
-import { toastIcon as Icon } from './ToastIcon'
-import './Toast.css'
+import { FC } from "react";
+import { Close } from "../Icons";
+import { Toast as ToastType } from "../../types";
+import { toastIcon as Icon } from "./ToastIcon";
+import "./Toast.css";
 
 export interface IToast extends ToastType {
-  onClose: (id: string) => void
+  onClose: (id: string) => void;
 }
 
 const Toast: FC<IToast> = ({
@@ -25,7 +25,7 @@ const Toast: FC<IToast> = ({
         <Close />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Toast
+export default Toast;
