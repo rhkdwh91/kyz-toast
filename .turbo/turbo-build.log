@@ -1,0 +1,4 @@
+
+> kyz-toast@0.2.1 build /Users/kwangyeon.cho/Documents/projects/turborepo-next-basic/packages/kyz-toast
+> tsc -b && vite build
+
